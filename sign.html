@@ -8,6 +8,7 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <title>Kerala Tourism</title>
 </head>
@@ -56,6 +57,7 @@
 <br>
 
 <center>
+  <form action="form.html" onsubmit=" return  validatemonumber() && validate() && validateForm() && validatePassword() && validatepwdcondition() && validatestrngpwd() && validatefirstname() && validaterepwdcondition()">
 <div class="container" name=index1>
 
   <style>
@@ -70,7 +72,7 @@
     <style>
       h5{ color: white;}
     </style>
-    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+    <input type="text" class="form-control" placeholder="First name" id ="fname" aria-label="First name">
   </div>
 
   <div class="col">
@@ -79,7 +81,7 @@
       h5{ color: white;}
     </style>
     
-    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    <input type="text" class="form-control" placeholder="Last name" id ="lname" aria-label="Last name">
   </div>
 </div>
 
@@ -92,24 +94,32 @@
       h5{ color: white;}
     </style>
     
-    <input type="email" class="form-control" placeholder="Email address" aria-label="Email address">
-  </div><br>
+    <input type="email" class="form-control" placeholder="Email address" id ="email" aria-label="Email address" required>
+  </div>
+  
+<label for="error" id="error"></label>
+  <br>
 
   <div class="col">
     <h5 style="text-align:left;">Password </h5>
     <style>
       h5{ color: white;}
     </style>
-    <input type="password" class="form-control" placeholder="password" aria-label="password">
+    <input type="password" class="form-control" placeholder="password" id="pwd" aria-label="password" required>
   </div>
-
+  
+  <label for="error1" id="error1"></label>
+  
 <br>
 <div class="col">
   <h5 style="text-align:left;">Retype password</h5>
     <style>
       h5{ color: white;}
     </style>
-    <input type="password" class="form-control" placeholder="Retype password" aria-label="Retypepassword">
+    <input type="password" class="form-control" placeholder="Retype password" id="repwd" aria-label="Retypepassword" required>
+  <br>
+    <span id="StrengthDisp" class="badge displayBadge"></span>
+  
  
 
 <br>
@@ -118,15 +128,21 @@
     <style>
       h5{ color: white;}
     </style>
-  <input type="text" class="form-control" placeholder=" Mobile number" aria-label="Mobile number">
+  <input type="text" class="form-control" placeholder=" Mobile number" id="mobnum" aria-label="Mobile number">
+  <!-- <label for="error2" id="error2"></label> -->
 </div>
 
 <br>
-
 <button class="btn btn-warning" type="submit">Sign up</button>
 </center>
 </div>
 
+</form>
 
+
+
+
+
+<script src="form.js"></script>
 </body>
 </html>
