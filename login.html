@@ -90,7 +90,7 @@
 
   <!-- login -->
    <div class="container" name="login1" style= "background-color: rgb(37, 19, 24);"  float: left>
-  <form action="form.html" onsubmit=" return validatefirstname() && validatePassword() && validatePassword() && validateForm()  && validatepwdcondition() && validatestrngpwd()">
+  <form action="form.html" onsubmit=" return validatepwdcondition() && validatestrngpwd()">
 
     <style>
       .container{
@@ -118,11 +118,11 @@
       <label for="password" style="color: white;">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="password" required>
     </div>
-    <label for="error" id="error"></label>
+    <label for="error1" id="error1"></label>
 
     <div class="checkbox">
       
-    <a href="./sign.html">sign up</a>
+    <a href="sign.html">sign up</a>
 
    
 <center>
@@ -141,7 +141,7 @@ float: left;
 </div>
 
 
-<script src="form.js"></script>
+<script src="login.js"></script>
 
 </body>
 </html>
