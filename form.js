@@ -46,6 +46,10 @@ function validate(){
                        }
 
 
+
+
+                       
+
          
        function validateForm(){
 
@@ -155,7 +159,12 @@ function validatestrngpwd(){
                          error1.style.color="green";
 
                          error1.style.border="2px";
-                         error1.style.background="white";
+
+                         error1.style.background="cyan";
+
+                         error1.style.borderBottomColor="blue";
+
+
 
 
                        
@@ -171,7 +180,7 @@ function validatestrngpwd(){
                       error1.style.color="orange";
 
                       error1.style.border="2px";
-                         error1.style.background="white";
+                         error1.style.background="cyan";
 
                      
                       
@@ -265,6 +274,12 @@ function validatestrngpwd(){
   
   
   
+                  
+
+
+                  
+
+
 
 
 
