@@ -6,6 +6,8 @@ let pwd=document.getElementById("pwd");
 let error= document.getElementById("error");
 let error1= document.getElementById("error1");
 let error2= document.getElementById("error2");
+let error4= document.getElementById("error4");
+
 let fname= document.getElementById("fname");
 let lname= document.getElementById("lname");
 let repwd= document.getElementById("repwd");
@@ -19,60 +21,62 @@ let mobnumber=document.getElementById("mobnum");
 
 function validate(){
 
-    let regexp = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/
+    var regexp = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/
 
 
 
+               if (regexp.test(email.value)!=true) {
 
+                       error.innerHTML="invalid email address";
+                      
+                            error.style.color="red";
 
-    if (regexp.test(email.value)) {
-
-                       error.innerHTML="";
-                  
-                 return true;
+                                //  alert("please enter a valid email id");
+                       
+                                          return false;
                             
-               }
-           else{
-                        error.innerHTML="invalid email address";
-                        error.style.color="red";
-                         
-                        alert("please enter a valid email id");
-                 
-
-              return false;
-
-                         }
-
-                       }
+                                                             }
+             else if(email.value==""){
 
 
-
-
-                       
-
-         
-       function validateForm(){
-
-
-          if (email.value.trim()=="" && pwd.value.trim()=="") {
-
-                              alert("field cannot be empty");
-                              alert.style.color="red";
+              error.innerHTML="field cannot be empty";
+                      
+                            error.style.color="red";
+                     
+                    
                               return false;
+                                          
+                           }
 
-    
-                                               } 
+          else if (email.value.trim()=="") {
+  
+
+            error.innerHTML="field cannot be empty";
+                      
+            error.style.color="red";
+            
+
+            return false;
+            
+          }
+           else{
+                       return true;
+           }
+                        
+                         
+                        
+         }      
+
+            
+
+
+
                        
-                                               else {
-          
-                                                        
-                                                return  true;
-}
 
       
-}
-
-
+          
+                                                        
+              
 
 
                          // validate validatePassword
@@ -81,27 +85,41 @@ function validate(){
 
 function validatePassword(){
                             
-                          if (pwd.value.length<=7) {
+      if (pwd.value.length<=7) {
 
-                           alert("password is less than 8 characters");
-                           alert.style.color="red";
+          alert("password is less than 8 characters");
+                          
+                alert.style.color="red";
 
-                           return false;
-                          }
+                   return false;
+                          
+                  }
+
+                  else if (pwd.value.trim()=="") {
+                    
+                    return false;
+                  }
 
                       
-                          else if(pwd.value!=repwd.value)
-                      {
+  else if(pwd.value!=repwd.value)
+                     
+  {
 
-                        alert('password doesnt match');
-                         return false;
+       alert('password doesnt match');
                          
-                      }
-                      else
-                      {
-                         return true;
-                      }
-                     }
+         return false;
+                         
+            }
+            
+            else
+            
+            {
+                        
+               return true;
+                      
+            }
+                     
+         }
 
 
 
@@ -110,22 +128,21 @@ function validatePassword(){
 
 function validatepwdcondition(){
 
-let m=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+    let m=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
-let pwd=document.getElementById("pwd");
+     let pwd=document.getElementById("pwd");
 
-let repwd= document.getElementById("repwd");
+        let repwd= document.getElementById("repwd");
 
                         
-                          if(pwd.value.match(m)){
+         if(pwd.value.match(m)){
 
-                                    
-   
-                             return true;
+                   return true;
                        
                             }
-                                 else{
-                                    alert('password should contain 8 characters, atleast 1 uppercase, lowercase and a number');
+          else{
+               
+            alert('password should contain 8 characters, atleast 1 uppercase, lowercase and a number');
 
                                     return false;
                                  }
@@ -141,60 +158,47 @@ let repwd= document.getElementById("repwd");
 function validatestrngpwd(){
 
 
-   let n=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{10}$/;
+   let n=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{10,12}$/;
 
 
-                  let o=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{11,}$/;
+       let o=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{13,}$/;
 
             
                   if (pwd.value.match(o)) {
 
-
-
-               
-                
-                         error1.innerHTML="password is strong";
+                      error1.innerHTML="password is strong";
                         
-                        
-                         error1.style.color="green";
+                           error1.style.color="green";
 
-                         error1.style.border="2px";
+                                  error1.style.border="2px";
 
-                         error1.style.background="cyan";
+                                        error1.style.background="cyan";
 
-                         error1.style.borderBottomColor="blue";
-
-
-
-
-                       
-                       
-                      
+                                              error1.style.borderBottomColor="blue";
+ 
       
    }
 
             else if(pwd.value.match(n)){
                       
-               error1.innerHTML="password is medium strong";
+                 error1.innerHTML="password is medium strong";
                    
-                      error1.style.color="orange";
+                        error1.style.color="orange";
 
-                      error1.style.border="2px";
-                         error1.style.background="cyan";
-
-                     
-                      
+                               error1.style.border="2px";
+                                 
+                                     error1.style.background="cyan";
 
    }
 
           else{
                       error1.innerHTML="password is poor";
                      
-                     error1.style.color="red";
+                           error1.style.color="red";
 
-                     error1.style.border="2px";
+                                  error1.style.border="2px";
 
-                         error1.style.background="yellow";
+                                         error1.style.background="yellow";
                      
                      
    }
@@ -211,38 +215,36 @@ function validatestrngpwd(){
        function validatemonumber(){
 
 
-         if (mobnumber.value=="") {
+                       if (mobnumber.value=="") {
                
-           
-           
-            alert(' number shouldnot be empty');
+                               alert(' number shouldnot be empty');
             
-            return false;
+                                        return false;
             
-         }
+                                              }
 
+                                        var phoneno = /^(\d{10})$/;
 
+                                var phoneno1 = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
-
-         var phoneno = /^(\d{10})$/;
-
-         var phoneno1 = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-
-
-         if (mobnumber.value.match(phoneno && phoneno1 )) {
+ if (mobnumber.value.match(phoneno && phoneno1 )) {
             
-            return true;
+                return true;
             
-         } 
+                   } 
          
-         else 
-         {
+               else 
+                       {
            
             alert(' invalid number, number should contain 10 digits only or XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX not in these format ');
-            
-            return false;
+          
+                  // error4.innerHTML=" number should contain 10 digits only or XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX in these format";
            
-         }
+                         error4.style.color="white";
+            
+                                return false;
+           
+                      }
 
 
        }
@@ -258,8 +260,7 @@ function validatestrngpwd(){
                 
                      alert(" name field cannot be empty");
       
-      
-                     return false;
+                           return false;
       
    
                   }
@@ -273,9 +274,64 @@ function validatestrngpwd(){
   }
   
   
-  
-                  
+  var letter = document.getElementById("letter");
+  var capital = document.getElementById("capital");
+  var number = document.getElementById("number");
+  var length = document.getElementById("length");
 
+
+
+// When the user clicks on the password field, show the message box
+pwd.onfocus = function() {
+   document.getElementById("message").style.display = "block";
+ }
+ 
+ // When the user clicks outside of the password field, hide the message box
+ pwd.onblur = function() {
+   document.getElementById("message").style.display = "none";
+ }
+
+ // When the user starts to type something inside the password field
+pwd.onkeyup = function() {
+   // Validate lowercase letters
+   var lowerCaseLetters = /[a-z]/g;
+   if(pwd.value.match(lowerCaseLetters)) {  
+     letter.classList.remove("invalid");
+     letter.classList.add("valid");
+   } else {
+     letter.classList.remove("valid");
+     letter.classList.add("invalid");
+   }
+   
+   // Validate capital letters
+   var upperCaseLetters = /[A-Z]/g;
+   if(pwd.value.match(upperCaseLetters)) {  
+     capital.classList.remove("invalid");
+     capital.classList.add("valid");
+   } else {
+     capital.classList.remove("valid");
+     capital.classList.add("invalid");
+   }
+
+   // Validate numbers
+  var numbers = /[0-9]/g;
+  if(pwd.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(pwd.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
 
                   
 
