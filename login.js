@@ -85,6 +85,7 @@ function validatePassword(){
 
                            alert("password is less than 8 characters");
                            alert.style.color="red";
+                           
 
                            return false;
                           }
@@ -126,7 +127,9 @@ let repwd= document.getElementById("repwd");
                             }
                                  else{
                                     alert('password should contain 8 characters, atleast 1 uppercase, lowercase and a number');
-
+                                   
+                                   
+                     
                                     return false;
                                  }
 
@@ -141,10 +144,10 @@ let repwd= document.getElementById("repwd");
 function validatestrngpwd(){
 
 
-   let n=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{10}$/;
+   let n=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{10,11}$/;
 
 
-                  let o=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{11,}$/;
+                  let o=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{12,}$/;
 
             
                   if (pwd.value.match(o)) {
