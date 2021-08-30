@@ -90,11 +90,13 @@
 
   <!-- login -->
    <div class="container" name="login1" style= "background-color: rgb(37, 19, 24);"  float: left>
+         
+         
   <form action="form.html" onsubmit=" return validatepwdcondition() && validatestrngpwd()">
 
     <style>
       .container{
-        height: 7cm;
+        height: 8cm;
         width: 13cm;
     
       }
@@ -116,8 +118,10 @@
    
     <div class="form-group">
       <label for="password" style="color: white;">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="password" required>
+      <input type="password" class="form-control" id="pwd" placeholder="password" onkeyup="validatestrngpwd()">
     </div>
+    
+    <br>
     <label for="error1" id="error1"></label>
 
     <div class="checkbox">
