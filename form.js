@@ -19,27 +19,30 @@ let mobnumber=document.getElementById("mobnum");
 
 
 
-function validate(){
+function validateEmail(){
 
-    var regexp = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/
+    var regexp = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+
+    error.innerHTML="";
+    // let regexp =/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,3})$/;
 
 
+               if (email.value=="") {
 
-               if (regexp.test(email.value)!=true) {
-
-                       error.innerHTML="invalid email address";
+                error.innerHTML="field cannot be empty";
+                      
                       
                             error.style.color="red";
 
-                                //  alert("please enter a valid email id");
+                               
                        
                                           return false;
                             
-                                                             }
-             else if(email.value==""){
+                             }
 
+             else if(regexp.test(email.value)!=true){
 
-              error.innerHTML="field cannot be empty";
+                      error.innerHTML="please enter a valid email address";
                       
                             error.style.color="red";
                      
@@ -53,14 +56,20 @@ function validate(){
 
             error.innerHTML="field cannot be empty";
                       
-            error.style.color="red";
+                   error.style.color="red";
             
 
-            return false;
+                       return false;
             
           }
-           else{
-                       return true;
+                
+                    else{
+                      
+                      error.innerHTML="valid email address";
+                      
+                      error.style.color="green";
+
+                      return true;
            }
                         
                          
@@ -228,19 +237,23 @@ function validatestrngpwd(){
                                 var phoneno1 = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
  if (mobnumber.value.match(phoneno && phoneno1 )) {
+
+                 error4.innerHTML="valid number";
             
-                return true;
+                       error4.style.color="green";
+               
+                       return true;
             
                    } 
          
                else 
                        {
            
-            alert(' invalid number, number should contain 10 digits only or XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX not in these format ');
+            // alert(' invalid number, number should contain 10 digits only or XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX not in these format ');
           
-                  // error4.innerHTML=" number should contain 10 digits only or XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX in these format";
+                  error4.innerHTML=" number should contain 10 digits only or XXX-XXX-XXXX, XXX.XXX.XXXX, XXX XXX XXXX in these format";
            
-                         error4.style.color="white";
+                         error4.style.color="red";
             
                                 return false;
            
