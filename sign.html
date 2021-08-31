@@ -62,7 +62,7 @@
 <br>
 
 <center>
-  <form action="form.html" onsubmit=" return validatemonumber() && validate()  && validatePassword() && validatepwdcondition() && validatestrngpwd() && validatefirstname() && validaterepwdcondition()">
+  <form action="" onsubmit=" return validatemonumber() && validateEmail()  && validatePassword() && validatepwdcondition() && validatestrngpwd() && validatefirstname() && validaterepwdcondition()">
 <div class="container" name=index1>
 
   <style>
@@ -99,7 +99,7 @@
       h5{ color: white;}
     </style>
     
-    <input type="email" class="form-control" placeholder="Email address" id ="email" aria-label="Email address" >
+    <input type="email" class="form-control" placeholder="Email address" id ="email" aria-label="Email address" onkeyup="validateEmail()" >
   </div>
   
 <label for="error" id="error"></label>
@@ -114,14 +114,15 @@
   </div>
 
   <div id="message">
+    <br>
     <h6 style="color: white;">Password must contain the following:</h6>
-    <p  id="letter" class="invalid">A <b>lowercase</b> letter</p>
+    <p style="text-align: left;" id="letter" class="invalid">A <b>lowercase</b> letter</p>
     
-    <p  id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+    <p style="text-align: left;" id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
     
-    <p  id="number" class="invalid">A <b>number</b></p>
+    <p style="text-align: left;" id="number" class="invalid">A <b>number</b></p>
     
-    <p  id="length" class="invalid">Minimum <b>8 characters</b></p>
+    <p style="text-align: left;" id="length" class="invalid">Minimum <b>8 characters</b></p>
   </div>
   
   <label for="error1" id="error1"></label>
@@ -144,7 +145,7 @@
     <style>
       h5{ color: white;}
     </style>
-  <input type="text" class="form-control" placeholder=" Mobile number" id="mobnum" aria-label="Mobile number" required>
+  <input type="text" class="form-control" placeholder=" Mobile number" id="mobnum" aria-label="Mobile number" onkeyup="validatemonumber()" >
   <label for="error4" id="error4"></label>
 </div>
 
